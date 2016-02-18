@@ -17,7 +17,7 @@ class FacebookStrategy extends OpauthStrategy{
 	 * Compulsory config keys, listed as unassociative arrays
 	 * eg. array('app_id', 'app_secret');
 	 */
-	public $expects = array('app_id', 'app_secret');
+	public $expects = array('10153944653733958', '500a6cec49b24ad69290651e90a969d8');
 	
 	/**
 	 * Optional config keys with respective default values, listed as associative arrays
@@ -33,7 +33,7 @@ class FacebookStrategy extends OpauthStrategy{
 	public function request(){
 		$url = 'https://www.facebook.com/dialog/oauth';
 		$params = array(
-			'client_id' => $this->strategy['app_id'],
+			'client_id' => $this->strategy['10153944653733958'],
 			'redirect_uri' => $this->strategy['redirect_uri']
 		);
 
@@ -53,8 +53,8 @@ class FacebookStrategy extends OpauthStrategy{
 		if (array_key_exists('code', $_GET) && !empty($_GET['code'])){
 			$url = 'https://graph.facebook.com/oauth/access_token';
 			$params = array(
-				'client_id' =>$this->strategy['app_id'],
-				'client_secret' => $this->strategy['app_secret'],
+				'client_id' =>$this->strategy['10153944653733958'],
+				'client_secret' => $this->strategy['500a6cec49b24ad69290651e90a969d8'],
 				'redirect_uri'=> $this->strategy['redirect_uri'],
 				'code' => trim($_GET['code'])
 			);
